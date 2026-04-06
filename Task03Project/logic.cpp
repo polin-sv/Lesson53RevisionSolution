@@ -7,12 +7,21 @@
 //worst O(N)
 
 #include "logic.h"
+int recursion(int n, int m) {
+	if (n == m) {
+		return n;
+	}
+
+	return m + recursion(n, m - 1);
+}
 
 int sum(int n, int m) {
 	
-	if (n == -m) {
-		return 0;
+	if (n > m) {
+		int t = n;
+		n = m;
+		m = t;
 	}
 	
-	return m + sum(n, m - 1);
+	return recursion(n, m);
 }
