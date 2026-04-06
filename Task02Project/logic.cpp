@@ -7,4 +7,14 @@
 // а каждое следующее – сумме двух предыдущих: 1, 1, 2, 3, 5, 8, 13, …
 #include "logic.h"
 
-int fibonacci(int index);
+int fibonacci(int index) {
+	if (index <= 0) {
+		return index;
+	}
+
+	if (index <= 2) {
+		return 1;
+	}
+
+	return fibonacci(index - 1) + fibonacci(index - 2);
+}
