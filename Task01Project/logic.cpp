@@ -3,3 +3,18 @@
 // 
 // Необходимо спроектировать и реализовать программу, 
 // которая вычисляет сумму чисел от 1 до N.
+
+int sum(int number) {
+	if (number < 0) {
+		return -1;
+	}
+	if (number == 0) {
+		return 0;
+	}
+
+	if (number == 1) {
+		return 1;
+	}
+
+	return number + sum(number - 1);
+}
